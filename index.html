@@ -113,6 +113,32 @@
     *,*::before,*::after{animation:none!important;transition:none!important}
     h1 .line span{transform:none} .hero-foot{opacity:1} .rv{opacity:1;transform:none} .media.rv{clip-path:none}
   }
+  .print-only{display:none!important}
+  @media print{
+    @page{size:Letter;margin:0}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;animation:none!important;transition:none!important}
+    body{font-size:12.5px;line-height:1.55}
+    nav,.scroll{display:none!important} .print-only{display:block!important} span.print-only{display:inline!important}
+    .wrap{padding:0 46px}
+    h1 .line span{transform:none} .hero-foot{opacity:1;grid-template-columns:1.2fr 1fr;gap:34px}
+    .hero-foot p{font-size:14px} .facts{font-size:11.5px}
+    .rv,.media.rv{opacity:1!important;transform:none!important;clip-path:none!important}
+    .hero{min-height:0} .hero .wrap{padding-top:54px;padding-bottom:40px} h1{font-size:78px;margin:18px 0 24px}
+    section{padding-top:40px!important} .head{margin-bottom:22px;padding-bottom:10px} .head h2{font-size:30px}
+    .proj{grid-template-columns:1fr 1.25fr;gap:28px;margin-bottom:10px;padding-top:30px} .proj.flip .media{order:2}
+    h3{font-size:24px;margin:8px 0 10px} .proj p{margin-bottom:12px}
+    .status{margin-bottom:12px;gap:5px} .status li{font-size:8.5px;padding:5px 7px}
+    dl div{grid-template-columns:104px 1fr;gap:12px;padding:7px 0;font-size:11.5px} dt{font-size:8.5px}
+    .cols{grid-template-columns:repeat(3,1fr)} .cols article{padding:16px 18px 18px 0;border-bottom:1px solid var(--rule)}
+    .cols article+article{padding-left:18px;border-left:1px solid var(--rule)}
+    .cols h4{font-size:18px;margin:6px 0 8px} .cols p{font-size:11.5px} .cols .n{font-size:15px}
+    .tools span{flex:1 1 120px;padding:11px 12px;font-size:11.5px} .tools small{font-size:8px}
+    .proj,.cols,.head,dl div,.tools,section{break-inside:avoid} .head{break-after:avoid}
+    .media img{filter:none;transform:none}
+    footer{margin-top:44px;padding:44px 0 30px;break-inside:avoid} footer h2{font-size:56px;margin:10px 0 22px}
+    .links{display:none} .fine{margin-top:26px;font-size:10.5px}
+    footer .print-only{font-size:13px;line-height:1.9;color:#e8e8e8}
+  }
 </style>
 </head>
 <body>
@@ -120,7 +146,7 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="label">Portfolio · in progress</div>
+    <div class="label"><span class="print-only" style="display:inline">Adler Kiely · </span>Portfolio · in progress</div>
     <h1><span class="line"><span>Hardware for</span></span><span class="line"><span>rockets <em>&amp;</em></span></span><span class="line"><span><em>drones.</em></span></span></h1>
     <div class="hero-foot">
       <p>I'm an aerospace engineering student at Kent State. This page collects what I'm designing right now and the reasoning behind it. Both projects are still in development, and I say so where it matters.</p>
@@ -211,6 +237,7 @@
     <div class="label rv" style="color:#9a9a9a">Contact</div>
     <h2 class="rv">Let's <em>talk.</em></h2>
     <div class="links rv"><a class="link" href="mailto:adler.kiely@gmail.com">Email</a><a class="link" href="https://www.linkedin.com/in/adlerkiely">LinkedIn</a><a class="link" href="https://github.com/adlerkiely-afk">GitHub</a></div>
+    <p class="print-only">adler.kiely@gmail.com<br>adlerkiely-afk.github.io<br>linkedin.com/in/adlerkiely<br>github.com/adlerkiely-afk</p>
     <div class="fine"><span>This portfolio is a work in progress. Write-ups, photos of real parts and test results will be added as the work gets done.</span><span>Adler Kiely · Kent State University</span></div>
   </div>
 </footer>
