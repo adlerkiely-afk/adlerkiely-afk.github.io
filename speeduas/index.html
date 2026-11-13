@@ -26,6 +26,10 @@
   main{max-width:860px;margin:0 auto;padding:56px 16px 80px}
   img{width:100%;display:block;margin:0 0 26px;border:1px solid var(--line);background:var(--bg2)}
   p{max-width:62ch;color:var(--dim)} .s{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;font-size:15px;color:var(--gold)}
+  h2{font:600 13px/1.4 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--text);margin:34px 0 8px}
+  table{border-collapse:collapse;width:100%;max-width:62ch;margin:6px 0 24px;font-size:15px}
+  td{border-bottom:1px solid var(--line);padding:9px 0;color:var(--dim)} td+td{text-align:right;color:var(--gold)}
+  .b.p{border-color:var(--gold)}
 </style>
 </head>
 <body>
@@ -34,8 +38,23 @@
   <h1>SpeedUAS: high-speed quadcopter</h1>
   <img style="filter:var(--imgf)" src="../images/wiref.png" alt="Wireframe CAD view of a quadcopter with a streamlined fuselage and four motor nacelles on airfoil arms">
   <p>A 5-inch, 6S quadcopter with a streamlined body-of-revolution fuselage, modeled in SolidWorks. Four integral NACA 0024 arms carry the motors, with a carbon-fibre spar and internal wire channels.</p>
+  <p><a class="b p" href="../resume/">View resume</a><a class="b" href="https://github.com/adlerkiely-afk/SpeedUAS">Repository ↗</a><a class="b" href="../#projects">← Back to the full portfolio</a></p>
+  <h2>My role</h2>
+  <p>I'm the sole designer. I started the project in April 2026 and it is still in development.</p>
+  <h2>Method</h2>
+  <p>I'm designing the high-speed airframe in SolidWorks and sizing an integrated electric propulsion package across motor, ESC, propeller and battery.</p>
+  <p>I'm setting up CFD in Ansys Fluent on the airframe geometry to estimate drag before committing to a build configuration. The case is set up and being meshed. Nothing is solved yet.</p>
+  <p>I print 3D-printed fit-check parts and correct the model from caliper measurements across successive revisions.</p>
+  <h2>Status</h2>
+  <table>
+    <tr><td>Airframe CAD</td><td>In development</td></tr>
+    <tr><td>Fit-check prints</td><td>Done, measured with calipers</td></tr>
+    <tr><td>CFD</td><td>Set up, meshing, not solved</td></tr>
+    <tr><td>Thrust stand</td><td>Designed, not run, no data</td></tr>
+    <tr><td>Aircraft</td><td>Not built, not flown</td></tr>
+  </table>
   <p class="s">Status: in development. Fit-check prints done, CFD meshing in progress and not yet solved, not assembled or flown.</p>
-  <p><a class="b" href="../#work">← Back to the full portfolio</a></p>
+  <p><a class="b" href="../#projects">← Back to the full portfolio</a></p>
 </main>
 </body>
 </html>

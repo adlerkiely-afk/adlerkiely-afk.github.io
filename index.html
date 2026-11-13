@@ -146,6 +146,9 @@
   .rows a:hover{color:var(--gold)}
   .pill{display:inline-block;margin-top:26px;border:1px solid var(--line);border-radius:999px;padding:12px 22px;font:500 14px var(--body);text-decoration:none;transition:border-color .3s}
   .pill:hover{border-color:var(--gold)}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .cta .pill{margin-top:0}
+  .cta .pill:first-child{border-color:var(--gold)}
   footer{margin-top:120px;border-top:1px solid var(--line);padding:26px 0 40px}
   footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
@@ -176,7 +179,7 @@
     :root,:root[data-theme="light"]{--bg:#fff;--bg2:#f6f5f1;--panel:#fafaf7;--text:#16181a;--dim:rgba(22,24,26,.72);--faint:rgba(22,24,26,.5);--line:rgba(22,24,26,.16);--gold:#8a6a2c;--imgf:none;--blend:multiply}
     *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     body{font-size:11px;line-height:1.5}
-    header.top,.scroll,.tog,.more,.pill,.cards{display:none!important}
+    header.top,.cta,.tog,.more,.pill,.cards{display:none!important}
     .rv{opacity:1!important;transform:none!important}
     .wrap{padding:0;max-width:none}
     .hero{min-height:0;padding:0 0 4px} .hero .wrap{grid-template-columns:1.4fr 1fr;gap:22px}
@@ -211,7 +214,7 @@
 
 <header class="top"><div class="wrap">
   <a class="brand" href="#"><b>Adler Kiely</b><span>Engineering Portfolio</span></a>
-  <nav><a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+  <nav><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="resume/">Resume</a><a href="#contact">Contact</a></nav>
   <button class="tog" id="tog" aria-label="Switch between light and dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
 </div></header>
 
@@ -219,7 +222,7 @@
   <div class="rv">
     <h1>Building hardware for rockets and drones.</h1>
     <p class="sub">The portfolio of an aerospace engineering student at Kent State University, seeking a summer 2027 internship.</p>
-    <div class="lbl scroll">Scroll</div>
+    <div class="cta"><a class="pill" href="resume/">View resume</a><a class="pill" href="#projects">See the projects</a><a class="pill" href="mailto:adler.kiely@gmail.com">Email me</a></div>
   </div>
   <figure class="rv">
     <img src="images/wiref.png" alt="Wireframe CAD view of a quadcopter with a streamlined rocket-shaped fuselage and four motor nacelles on airfoil arms">
@@ -251,73 +254,13 @@
     </div>
   </section>
 
-  <section id="education">
-    <div class="shead rv"><h2>Education</h2><span class="lbl">Kent State University</span></div>
-    <div class="entry rv">
-      <div>
-        <div class="when">Aug 2025 — May 2029 (expected)</div>
-        <h3>B.S., Aerospace Engineering</h3>
-        <div class="org">Kent State University · Kent, Ohio</div>
-        <p>Coursework includes Statics, Calculus I–III, Linear Algebra, Physics I–II (E&amp;M) and Engineering Computing in MATLAB.</p>
-      </div>
-      <div class="stats">
-        <div><span class="lbl">Cumulative GPA</span><b class="gold">4.00 / 4.00</b></div>
-        <div><span class="lbl">Honors</span><b>President's List</b></div>
-        <div><span class="lbl">Scholarship</span><b>President's Achievement</b></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="shead rv"><h2>Experience</h2><span class="lbl">Most recent first</span></div>
-    <div class="entry rv">
-      <div>
-        <div class="when">Aug 2026 — Current</div>
-        <h3>Payload Subsection Lead</h3>
-        <div class="org">Kent State University Rocket Team · Kent, Ohio</div>
-      </div>
-      <ul class="pts">
-        <li>Direct members of a 6-member payload subsection through design, fabrication and integration for the team's 2027 L3 rocket, working from the senior payload lead's direction.</li>
-        <li>Developing a 4U CubeSat-format weather station payload that measures atmospheric data with pitot tubes and other sensors, with a servo-actuated pitot deployment mechanism.</li>
-      </ul>
-    </div>
-    <div class="entry rv">
-      <div>
-        <div class="when">Jun 2026 — Current</div>
-        <h3>Engineering Undergraduate Student</h3>
-        <div class="org">Equinox Engineering Ltd. · Canonsburg, Pennsylvania</div>
-      </div>
-      <ul class="pts">
-        <li>Reviewed finalized 2D and 3D engineering drawings to study the company's modeling methods, drafting standards and GD&amp;T conventions.</li>
-        <li>Gained exposure to EPCM workflows across facility design and cross-disciplinary coordination on oil, gas and energy projects.</li>
-        <li>Taught myself Microsoft Power BI and built dashboards of engineering project metrics.</li>
-      </ul>
-    </div>
-    <div class="entry rv">
-      <div>
-        <div class="when">Apr 2026 — Current</div>
-        <h3>Academic Tutor</h3>
-        <div class="org">Kent State University · Calculus I &amp; II, Physics I</div>
-      </div>
-      <ul class="pts"><li>Selected on the basis of a 4.0 GPA to tutor calculus and calculus-based physics, breaking analytical problems into approachable steps for peers.</li></ul>
-    </div>
-    <div class="entry rv">
-      <div>
-        <div class="when">Jan 2026 — Aug 2026</div>
-        <h3>Aerostructure Member</h3>
-        <div class="org">Kent State University Rocket Team · Kent, Ohio</div>
-      </div>
-      <ul class="pts"><li>Fabricated G10 fiberglass composite fins for a 13-ft high-power rocket, beveling the leading edges to reduce pressure drag and epoxy-bonding the fins to the body tube for launch and recovery loads.</li></ul>
-    </div>
-  </section>
-
   <section id="projects">
     <div class="shead rv"><h2>Projects</h2><span class="lbl">Two in development</span></div>
     <div class="cards rv">
       <a class="card" href="#payload">
         <div class="top"><span class="lbl">Rocket Team · 2026</span><span class="lbl gold">Being built</span></div>
         <h3>Pitot Deployment Mechanism</h3>
-        <p>One servo driving a symmetrical linkage that pushes pitot probes out of a CubeSat-format payload.</p>
+        <p>One servo driving a symmetrical linkage that pushes four pitot probes out of a CubeSat-format payload.</p>
         <div class="tags">Onshape · Linkage design · Trade study<br>Servo actuation · 4U CubeSat format</div>
       </a>
       <a class="card" href="#speeduas">
@@ -334,8 +277,9 @@
       <div class="dgrid">
         <div>
           <figure class="pic"><img src="images/payload.gif" alt="CAD animation of a servo-driven linkage pushing pitot probes out of a CubeSat-format payload frame"><figcaption class="lbl">Linkage animation · Onshape</figcaption></figure>
-          <p>This is one unit of the team's 4U CubeSat-format weather station payload. During descent, <strong>a single servo drives a symmetrical linkage</strong> that pushes the pitot probes out of the payload.</p>
+          <p>This is one unit of the team's 4U CubeSat-format weather station payload. During descent, <strong>a single servo drives a symmetrical linkage</strong> that pushes the four pitot probes out of the payload.</p>
           <p>The probes were first meant to measure wind speed. We decided that reading couldn't be accurate, so we re-approached the design to <strong>measure descent speed</strong>, which gives the weather station more data against altitude.</p>
+          <p>I'm using <strong>FEA to choose materials for the linkage</strong>. That work is in progress: there are no results and no final material choice yet.</p>
           <a class="more" href="payload/">Project page ↗</a>
         </div>
         <dl class="spec">
@@ -343,6 +287,7 @@
           <div><dt>Trade study</dt><dd>Rack-and-pinion vs slider-crank</dd></div>
           <div><dt>Sizing</dt><dd>Stroke and torque</dd></div>
           <div><dt>CAD</dt><dd>Onshape</dd></div>
+          <div><dt>FEA</dt><dd class="warn">Material selection, in progress</dd></div>
           <div><dt>My role</dt><dd>Lead, 6-member subsection</dd></div>
           <div><dt>Flies</dt><dd>IREC, summer 2027</dd></div>
           <div><dt>Status</dt><dd class="warn">Being built · no flight data</dd></div>
@@ -378,6 +323,78 @@
         <article><span class="lbl gold">Lesson iii</span><h5>A bridge that printed badly</h5><p>A 29 mm unsupported bridge on the motor plate became a funnel-shaped cavity with screw pockets. Every part now prints without supports.</p></article>
       </div>
     </article>
+  </section>
+
+  <section id="experience">
+    <div class="shead rv"><h2>Experience</h2><span class="lbl">Most recent first</span></div>
+    <div class="entry rv">
+      <div>
+        <div class="when">Aug 2026 — Current</div>
+        <h3>Payload Subsection Lead</h3>
+        <div class="org">Kent State University Rocket Team · Kent, Ohio</div>
+      </div>
+      <ul class="pts">
+        <li>Direct members of a 6-member payload subsection through design, fabrication and integration for the team's 2027 L3 rocket, working from the senior payload lead's direction.</li>
+        <li>Developing a 4U CubeSat-format weather station payload that measures atmospheric data with pitot tubes and other sensors, with a servo-actuated pitot deployment mechanism.</li>
+        <li>Using FEA to choose materials for the linkage mechanism on the payload. This is in progress, with no results yet.</li>
+      </ul>
+    </div>
+    <div class="entry rv">
+      <div>
+        <div class="when">Jun 2026 — Current</div>
+        <h3>Engineering Undergraduate Student</h3>
+        <div class="org">Equinox Engineering Ltd. · Canonsburg, Pennsylvania</div>
+      </div>
+      <ul class="pts">
+        <li>Reviewed finalized 2D and 3D engineering drawings to study the company's modeling methods, drafting standards and GD&amp;T conventions.</li>
+        <li>Gained exposure to EPCM workflows across facility design and cross-disciplinary coordination on oil, gas and energy projects.</li>
+        <li>Taught myself Microsoft Power BI and built dashboards of engineering project metrics.</li>
+      </ul>
+    </div>
+    <div class="entry rv">
+      <div>
+        <div class="when">Apr 2026 — Current</div>
+        <h3>Academic Tutor</h3>
+        <div class="org">Kent State University · Calculus I &amp; II, Physics I</div>
+      </div>
+      <ul class="pts"><li>Selected on the basis of a 4.0 GPA to tutor calculus and calculus-based physics, breaking analytical problems into approachable steps for peers.</li></ul>
+    </div>
+    <div class="entry rv">
+      <div>
+        <div class="when">Jan 2026 — Aug 2026</div>
+        <h3>Aerostructure Member</h3>
+        <div class="org">Kent State University Rocket Team · Kent, Ohio</div>
+      </div>
+      <ul class="pts"><li>Fabricated G10 fiberglass composite fins for a 13-ft high-power rocket, beveling the leading edges to reduce pressure drag and epoxy-bonding the fins to the body tube for launch and recovery loads.</li></ul>
+    </div>
+  </section>
+
+  <section id="affiliations">
+    <div class="shead rv"><h2>Affiliations</h2><span class="lbl">Outside the classroom</span></div>
+    <div class="rv">
+      <ul class="pts">
+        <li><strong>AIAA:</strong> Kent State Student Branch, Advocacy Officer, 2026 – present</li>
+        <li><strong>Rocketry:</strong> Tripoli Rocketry Association, Member</li>
+        <li><strong>Ethics:</strong> Lockheed Martin Ethics Case Competition Team, Kent State, Member, 2026</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="shead rv"><h2>Education</h2><span class="lbl">Kent State University</span></div>
+    <div class="entry rv">
+      <div>
+        <div class="when">Aug 2025 — May 2029 (expected)</div>
+        <h3>B.S., Aerospace Engineering</h3>
+        <div class="org">Kent State University · Kent, Ohio</div>
+        <p>Coursework includes Statics, Calculus I–III, Linear Algebra, Physics I–II (E&amp;M) and Engineering Computing in MATLAB.</p>
+      </div>
+      <div class="stats">
+        <div><span class="lbl">Cumulative GPA</span><b class="gold">4.00 / 4.00</b></div>
+        <div><span class="lbl">Honors</span><b>President's List</b></div>
+        <div><span class="lbl">Scholarship</span><b>President's Achievement</b></div>
+      </div>
+    </div>
   </section>
 
   <section id="skills">
