@@ -89,12 +89,13 @@
   <section class="sec">
     <h2>Requirements</h2>
     <div class="body">
-      <p>The atmospheric payload's requirements are section 2.4.2.6 of the team's 2026–27 requirements document, written by the senior design team. I worked with the senior payload lead on the functional decisions behind them. They were written when the pitot probes were meant to read wind. The probes now read descent speed, and wind speed and direction are roughly estimated from GPS instead.*</p>
+      <p>The atmospheric payload's requirements are section 2.4.2.6 of the team's 2026–27 requirements document, written by the senior design team. I worked with the senior payload lead on the functional decisions behind them. They were written when the pitot probes were meant to read wind.</p>
+      <p class="note">* = working requirement. This is the wording the payload team is designing to now. It is not in the official requirements document yet; the official wording is shown underneath.</p>
       <dl class="rows">
-        <div><dt>2.4.2.6.7 · Determine wind speed during descent</dt><dd>Kept*<small>rough estimate from GPS</small></dd></div>
-        <div><dt>2.4.2.6.8 · Determine wind direction during descent</dt><dd>Kept*<small>rough estimate from GPS</small></dd></div>
-        <div><dt>2.4.2.6.9 – .10 · Orientation and heading, to interpret wind measurements</dt><dd>To revisit*<small>written for wind</small></dd></div>
-        <div><dt>2.4.2.6.1 · Extendable pitot tube for accurate measurements</dt><dd>Kept*<small>probes extend from the base</small></dd></div>
+        <div><dt>2.4.2.6.1* · The payload shall extend pitot probes below its base into the airflow to measure its descent rate.<small style="display:block;margin-top:3px;opacity:.75">Official: extendable pitot tube for accurate data measurements</small></dt><dd>Changed*<small>probes measure descent rate</small></dd></div>
+        <div><dt>2.4.2.6.7* · The payload shall estimate wind speed during descent from its GPS track.<small style="display:block;margin-top:3px;opacity:.75">Official: determine wind speed during descent</small></dt><dd>Changed*<small>estimated from GPS</small></dd></div>
+        <div><dt>2.4.2.6.8* · The payload shall estimate wind direction during descent from its GPS track.<small style="display:block;margin-top:3px;opacity:.75">Official: determine wind direction during descent</small></dt><dd>Changed*<small>estimated from GPS</small></dd></div>
+        <div><dt>2.4.2.6.9 – .10* · Orientation and heading during descent.<small style="display:block;margin-top:3px;opacity:.75">Official: needed to interpret wind measurements</small></dt><dd>To revisit*<small>written for the pitot wind method</small></dd></div>
       </dl>
       <p>Still in force for the current design:</p>
       <ul class="pts">
@@ -103,7 +104,6 @@
         <li>Timestamp every measurement and store it onboard for retrieval and analysis (2.4.2.6.12 – .14).</li>
         <li>Switch from stowed to data collection on its own after deployment, with no commands from the ground (2.4.2.6.15 – .16).</li>
       </ul>
-      <p class="note">* Working change. It's what the payload team is designing to now, but the official requirements document hasn't been updated yet.</p>
       <p class="note">None of these are verified yet. The payload hasn't been built or flown.</p>
     </div>
   </section>
