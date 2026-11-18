@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adler Kiely · Aerospace Engineering Portfolio</title>
+<meta name="description" content="Adler Kiely, aerospace engineering sophomore at Kent State University. Payload Subsection Lead on the Kent State Rocket Team and designer of the SpeedUAS quadcopter. Both projects are in development.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Adler Kiely · Aerospace Engineering Portfolio">
+<meta property="og:description" content="Aerospace engineering sophomore at Kent State. A rocket payload pitot deployment mechanism and a high-speed quadcopter, both in development.">
+<meta property="og:image" content="https://adlerkiely-afk.github.io/images/wiref.png">
+<meta property="og:url" content="https://adlerkiely-afk.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<style>
+  /* base */
+  *,*::before,*::after{box-sizing:border-box}
+  html{color-scheme:dark;-webkit-text-size-adjust:100%;scroll-padding-top:88px}
+  :root[data-theme="light"]{color-scheme:light}
+  body{margin:0;background:var(--bg);color:var(--text);font:400 16px/26px var(--sans);-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,p,dl,dd,ul,figure{margin:0}
+  ul{padding:0;list-style:none}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  ::selection{background:var(--accent);color:var(--accent-ink)}
+  .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 32px}
+  .meta{font:400 12px/16px var(--mono);color:var(--text-3)}
+  .ic{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .skip{position:absolute;left:16px;top:-64px;z-index:60;display:flex;align-items:center;height:40px;padding:0 16px;border-radius:var(--r-ctl);background:var(--btn-bg);color:var(--btn-text);font:500 14px/20px var(--sans);text-decoration:none}
+  .skip:focus{top:12px}
+
+  /* header */
+  .top{position:sticky;top:0;z-index:40;height:64px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;gap:8px;height:100%}
+  .brand{display:flex;align-items:baseline;gap:12px;margin-right:auto;text-decoration:none}
+  .brand b{font: 600 16px/24px var(--display)}
+  .brand span{font:400 12px/16px var(--mono);color:var(--text-3)}
+  nav{display:flex;gap:4px}
+  nav a{display:flex;align-items:center;height:36px;padding:0 12px;border-radius:var(--r-ctl);font:400 14px/20px var(--sans);color:var(--text-2);text-decoration:none;transition:color var(--fast) var(--ease),background-color var(--fast) var(--ease)}
+  nav a:hover{color:var(--text)}
+  nav a[aria-current]{color:var(--text);background:var(--raised)}
+  .icon-btn{display:grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:var(--r-ctl);background:none;color:var(--text-2);cursor:pointer;transition:color var(--fast) var(--ease),background-color var(--fast) var(--ease)}
+  .icon-btn:hover{color:var(--text);background:var(--raised)}
+  .tog .moon,.menu .x,.menu{display:none}
+  :root[data-theme="light"] .tog .sun{display:none}
+  :root[data-theme="light"] .tog .moon{display:block}
+  html:not(.js) .tog{display:none}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border:1px solid var(--btn-bg);border-radius:var(--r-ctl);background:var(--btn-bg);color:var(--btn-text);font:500 16px/24px var(--sans);text-decoration:none;white-space:nowrap;transition:background-color var(--fast) var(--ease),border-color var(--fast) var(--ease),transform var(--fast) var(--ease)}
+  .btn:hover{background:color-mix(in srgb,var(--btn-bg) 86%,var(--bg));border-color:color-mix(in srgb,var(--btn-bg) 86%,var(--bg))}
+  .btn:active{transform:scale(.98)}
+  .btn.alt{background:var(--raised);border-color:var(--line-2);color:var(--text)}
+  .btn.alt:hover{background:color-mix(in srgb,var(--raised) 92%,var(--text));border-color:var(--text-3)}
+  .btn.sm{height:40px;padding:0 16px;font-size:14px;line-height:20px}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+  /* hero */
+  .hero{display:grid;align-items:center;min-height:min(calc(100svh - 64px),880px);padding:48px 0}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center}
+  .hero h1{margin-top:20px;font: 700 48px/52px var(--display);letter-spacing:-0.02em;text-wrap:balance}
+  .nb{white-space:nowrap}
+  .sub{margin-top:24px;max-width:36rem;font-size:18px;line-height:28px;color:var(--text-2);text-wrap:pretty}
+  .wire{filter:invert(1) contrast(1.4) brightness(.92);mix-blend-mode:var(--blend)}
+  :root[data-theme="light"] .wire{filter:contrast(1.4)}
+  .hero-fig img{width:min(100%,max(320px,calc((100svh - 204px)*10/9)));margin:0 auto;aspect-ratio:10/9;object-fit:cover;pointer-events:none}
+  .hero-fig figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+
+  /* sections */
+  section{margin-top:96px}
+  .hero+.wrap>section:first-child{margin-top:48px}
+  .shead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px;padding-bottom:12px;margin-bottom:40px;border-bottom:1px solid var(--line)}
+  .shead h2{font: 600 20px/28px var(--display); letter-spacing: -0.02em}
+  h3{font: 600 18px/28px var(--display); letter-spacing: -0.02em}
+  .split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 48px;align-items:start}
+  .prose p{max-width:64ch;color:var(--text-2);text-wrap:pretty}
+  .prose p+p{margin-top:16px}
+
+  /* label and value rows */
+  .card{padding:8px 24px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card)}
+  .card-foot{display:flex;justify-content:space-between;gap:16px;padding:12px 0}
+  .kv{font-size:14px;line-height:20px;font-variant-numeric:tabular-nums}
+  .kv>div{display:flex;justify-content:space-between;gap:24px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .kv dt{flex:none;color:var(--text-2)}
+  .kv dd{text-align:right}
+  .kv small,.skills small{font:400 12px/16px var(--mono);color:var(--text-3)}
+  .kv small{margin-left:4px;white-space:nowrap}
+  .kv a{text-decoration-color:var(--line-2);text-decoration-thickness:1px;text-underline-offset:4px;transition:color var(--fast) var(--ease),text-decoration-color var(--fast) var(--ease)}
+  .kv a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+
+  /* projects */
+  .proj{padding:40px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-panel)}
+  .proj+.proj{margin-top:32px}
+  .proj-head{margin-bottom:32px}
+  .proj-head h3{margin:12px 0 8px;font: 600 28px/32px var(--display);letter-spacing:-0.01em}
+  .role,.org,.figs dt{font-size:14px;line-height:20px;color:var(--text-2)}
+  .proj-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+  .view img,.sheet{width:100%;border-radius:var(--r-tag)}
+  .sheet{padding:24px;background:var(--bg);border:1px solid var(--line)}
+  .sheet img{aspect-ratio:4/3;object-fit:cover;border-radius:0}
+  .view figcaption{margin-top:12px}
+  .figs{display:grid;grid-template-columns:repeat(2,auto);justify-content:start;gap:24px 40px;margin-top:32px}
+  .figs dt{margin-bottom:8px}
+  .dim b,.dim i{white-space:nowrap}
+  .lead{font-size:18px;line-height:28px;text-wrap:balance}
+  .story .prose,.story .actions{margin-top:24px}
+  .spec{columns:2;column-gap:48px;margin-top:40px;border-top:1px solid var(--line)}
+  .spec>div{break-inside:avoid}
+  .notes{margin-top:40px}
+  .notes li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 48px;padding:20px 0;border-top:1px solid var(--line)}
+  .notes h4{margin-top:4px;font: 600 16px/24px var(--display); letter-spacing: -0.02em}
+  .notes p{max-width:64ch;font-size:14px;line-height:22px;color:var(--text-2)}
+  .proj-foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line)}
+  .notes+.proj-foot{margin-top:0}
+
+  /* experience and education */
+  .entry{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px 48px;padding:32px 0;border-top:1px solid var(--line)}
+  .shead+.entry{padding-top:0;border-top:0}
+  .entry:last-child{padding-bottom:0}
+  .entry h3{margin-top:8px}
+  .org{margin-top:4px}
+  .pts li{position:relative;padding-left:20px;color:var(--text-2);text-wrap:pretty}
+  .pts li+li{margin-top:12px}
+  .pts li::before{content:"";position:absolute;left:0;top:12px;width:8px;height:1px;background:var(--text-3)}
+  .entry .kv{margin-top:24px;border-top:1px solid var(--line)}
+
+  /* affiliations and skills */
+  .rows>*{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4px 48px;padding:16px 0;border-top:1px solid var(--line)}
+  .rows>:first-child{padding-top:0;border-top:0}
+  .rows>:last-child{padding-bottom:0}
+  .rows .r{display:flex;justify-content:space-between;align-items:baseline;gap:16px;color:var(--text-2)}
+  .skills ul{display:flex;flex-wrap:wrap;gap:8px 24px}
+  .skills li{color:var(--text-2);white-space:nowrap}
+  .skills small{margin-left:8px}
+
+  /* contact */
+  .contact p{margin-top:8px;max-width:40ch;color:var(--text-2)}
+  .kv.lg{font-size:16px;line-height:24px}
+  .kv.lg>div:first-child{padding-top:0}
+  @media (min-width:960px){.split.contact{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
+  .cform{max-width:none;margin-top:32px;padding:24px}
+  .cform .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+  .field{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+  .field label{font:500 14px/20px var(--sans);color:var(--text-2)}
+  .field input,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--line-2);border-radius:var(--r-ctl);background:var(--bg);color:var(--text);font:400 16px/24px var(--sans);transition:border-color var(--fast) var(--ease)}
+  .field input:hover,.field textarea:hover{border-color:var(--text-3)}
+  .field textarea{min-height:144px;resize:vertical}
+  .cform-foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:8px}
+  button.btn{cursor:pointer}
+  footer{margin-top:96px;padding:24px 0 40px;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px}
+
+  /* motion: one entrance on load */
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}}
+  @media (prefers-reduced-motion:no-preference){
+    html{scroll-behavior:smooth}
+    .enter>*,.hero-fig img,.hero-fig figcaption{animation:rise var(--enter) var(--ease) backwards}
+    .enter>:nth-child(2){animation-delay:50ms}
+    .enter>:nth-child(3){animation-delay:100ms}
+    .enter>:nth-child(4){animation-delay:150ms}
+    .hero-fig img{animation-delay:200ms}
+    .hero-fig figcaption{animation-delay:250ms}
+  }
+
+  @media (max-width:959px){
+    .wrap{padding:0 20px}
+    .brand span{display:none}
+    .hero{min-height:0;padding:48px 0 0}
+    .hero .wrap,.split,.entry,.rows>*,.notes li{grid-template-columns:minmax(0,1fr)}
+    .hero .wrap{gap:40px}
+    .hero h1{font-size:36px;line-height:40px}
+    .hero-fig{max-width:560px}
+    .hero-fig img{width:100%}
+    section,footer{margin-top:64px}
+    .shead{margin-bottom:24px}
+    .proj{padding:20px}
+    .proj+.proj{margin-top:20px}
+    .proj-head{margin-bottom:24px}
+    .proj-grid{display:flex;flex-direction:column;gap:0}
+    .proj-vis,.story{display:contents}
+    .lead{order:1}
+    .view{order:2;max-width:420px;margin-top:24px}
+    .figs{order:3;margin-top:24px}
+    .story .prose{order:4;margin-top:32px}
+    .story .actions{order:5}
+    .spec{columns:1;margin-top:32px}
+    .notes{margin-top:32px}
+    .proj-foot{margin-top:32px}
+    .entry{padding:24px 0}
+    .contact{row-gap:32px}
+    .cform{margin-top:32px;padding:20px}
+    .cform .row{grid-template-columns:minmax(0,1fr);gap:0}
+  }
+  @media (max-width:719px){
+    .js .menu{display:grid}
+    .js .menu[aria-expanded="true"] .bars{display:none}
+    .js .menu[aria-expanded="true"] .x{display:block}
+    .js nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:8px 8px 12px;background:var(--bg);border-bottom:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity var(--fast) var(--ease),transform var(--fast) var(--ease),visibility 0s linear var(--fast)}
+    .js nav.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+    .js nav a{height:44px}
+    html:not(.js) .top{height:auto}
+    html:not(.js) .top .wrap{flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+    html:not(.js) nav{flex-wrap:wrap;width:100%}
+  }
+  @media (max-width:559px){
+    .figs{grid-template-columns:minmax(0,1fr)}
+  }
+
+  /* print / PDF: light, compact */
+  @media print{
+    @page{size:Letter;margin:.5in .55in}
+    :root,:root[data-theme="light"]{--bg:#ffffff;--card:#ffffff;--raised:#eceff4;--text:#111827;--text-2:#4b5565;--text-3:#6b7487;--line:rgba(17,24,39,.14);--line-2:rgba(17,24,39,.14);--accent:#2552c4;--blend:multiply;color-scheme:light}
+    *,*::before,*::after{animation:none!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    body{font-size:11px;line-height:16px}
+    .top,.skip,.actions,.cform{display:none!important}
+    .wrap{max-width:none;padding:0}
+    .wire{filter:contrast(1.4)!important;mix-blend-mode:normal!important}
+    .hero{display:block;min-height:0;padding:0}
+    .hero .wrap{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px}
+    .hero h1{margin-top:8px;font-size:24px;line-height:28px}
+    .sub{margin-top:8px;font-size:12px;line-height:18px}
+    .hero-fig{max-width:none}
+    .hero-fig img{width:100%;aspect-ratio:3/2}
+    .hero-fig figcaption{margin-top:4px;padding-top:4px}
+    .meta,.kv small,.skills small{font-size:9px;line-height:12px}
+    section,.hero+.wrap>section:first-child{margin-top:20px}
+    .shead{padding-bottom:4px;margin-bottom:12px;break-after:avoid}
+    .shead h2{font-size:13px;line-height:16px}
+    h3{font-size:12px;line-height:16px}
+    .split,.entry,.rows>*,.notes li{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4px 24px}
+    .card{padding:0 12px}
+    .card-foot{padding:4px 0}
+    .kv,.kv.lg{font-size:10px;line-height:14px}
+    .kv>div{padding:4px 0}
+    .prose p+p{margin-top:6px}
+    .proj{padding:0;border:0;border-radius:0;background:none}
+    .proj+.proj{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+    .proj-head{margin-bottom:8px;break-after:avoid}
+    .view,.figs>div,.kv>div,.notes li,.rows>*,.card{break-inside:avoid}
+    .proj-head h3{margin:4px 0 2px;font-size:18px;line-height:22px}
+    .role,.org,.figs dt{font-size:10px;line-height:14px}
+    .proj-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px}
+    .proj-vis,.story{display:block}
+    .view{max-width:220px;margin-top:0}
+    .view figcaption{margin-top:4px}
+    .sheet{padding:8px}
+    .lead{font-size:12px;line-height:18px}
+    .figs{grid-template-columns:repeat(2,auto);gap:8px 16px;margin-top:12px}
+    .figs dt{margin-bottom:4px}
+    .dim{gap:2px}
+    .dim b{font-size:16px}
+    .dim i{font-size:9px;line-height:12px}
+    .story .prose{margin-top:8px}
+    .spec{columns:2;column-gap:24px;margin-top:12px}
+    .notes{margin-top:12px}
+    .notes li{padding:6px 0}
+    .notes h4{margin-top:0;font-size:11px;line-height:16px}
+    .notes p{font-size:10px;line-height:14px}
+    .proj-foot{margin-top:12px;padding-top:6px}
+    .notes+.proj-foot{margin-top:0}
+    .entry{padding:10px 0;break-inside:avoid}
+    .entry h3{margin-top:2px}
+    .org{margin-top:0}
+    .entry .kv{margin-top:8px}
+    .pts li{padding-left:12px}
+    .pts li+li{margin-top:4px}
+    .pts li::before{top:8px;width:6px}
+    .rows>*{padding:6px 0}
+    .skills ul{gap:2px 16px}
+    .contact{break-inside:avoid}
+    footer{margin-top:20px;padding:8px 0 0}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></symbol>
+</defs></svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#"><b>Adler Kiely</b><span>Engineering portfolio</span></a>
+  <nav id="nav" aria-label="Sections"><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="resume/">Resume</a><a href="#contact">Contact</a></nav>
+  <button class="icon-btn tog" id="tog" type="button" aria-label="Switch between light and dark theme"><svg class="ic sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+  <button class="icon-btn menu" id="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg class="ic bars" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic x" aria-hidden="true"><use href="#i-x"/></svg></button>
+</div></header>
+
+<main id="main">
+
+<div class="hero"><div class="wrap">
+  <div class="enter">
+    <p class="meta">Aerospace engineering · Kent State University</p>
+    <h1>I design a rocket payload mechanism and a <span class="nb">high-speed</span> quadcopter</h1>
+    <p class="sub">I'm a sophomore in aerospace engineering. I lead the payload subsection on the Kent State Rocket Team, and I'm designing a high-speed quadcopter on my own. I'm looking for a summer 2027 internship.</p>
+    <div class="actions"><a class="btn" href="resume/">View resume</a><a class="btn alt" href="#projects">Projects</a></div>
+  </div>
+  <figure class="hero-fig">
+    <img class="wire" src="images/wiref.png" width="1385" height="865" alt="Wireframe CAD view of a quadcopter with a streamlined rocket-shaped fuselage and four motor nacelles on airfoil arms">
+    <figcaption class="meta"><span>SpeedUAS · CAD wireframe</span><span>In development</span></figcaption>
+  </figure>
+</div></div>
+
+<div class="wrap">
+
+  <section id="about">
+    <div class="shead"><h2>About</h2><span class="meta">Cranberry Township, PA · Kent, Ohio</span></div>
+    <div class="split">
+      <div class="card">
+        <dl class="kv">
+          <div><dt>Degree</dt><dd>B.S. Aerospace Engineering</dd></div>
+          <div><dt>Graduates</dt><dd>May 2029</dd></div>
+          <div><dt>GPA</dt><dd>4.00 / 4.00</dd></div>
+          <div><dt>Team role</dt><dd>Payload Subsection Lead</dd></div>
+          <div><dt>Flight time</dt><dd>40 hours <small>logged</small></dd></div>
+          <div><dt>Citizenship</dt><dd>U.S. citizen</dd></div>
+        </dl>
+        <div class="card-foot meta"><span>Adler Kiely</span><span>Seeking summer 2027</span></div>
+      </div>
+      <div class="prose">
+        <p>I'm a sophomore studying aerospace engineering at Kent State University. I joined the Kent State University Rocket Team in January 2026 and started out fabricating fiberglass fins. Since August 2026 I've led the payload subsection, where my own part is the mechanism that deploys the pitot probes.</p>
+        <p>On my own time I'm designing SpeedUAS, a high-speed quadcopter. My first prints didn't fit, because I had modeled the battery and the motor mount from datasheets. I measured the real parts with calipers and resized the airframe around them.</p>
+        <p>I also tutor calculus and physics at Kent State, and I've logged 40 hours of flight time in single-engine airplanes.</p>
+        <p>Neither project has flown yet. The payload flies at IREC in summer 2027, and the quadcopter is at the CFD meshing stage.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="shead"><h2>Projects</h2><span class="meta">Two in development</span></div>
+
+    <article class="proj" id="payload">
+      <header class="proj-head">
+        <p class="meta">Kent State Rocket Team · 2027 IREC payload</p>
+        <h3>Pitot deployment mechanism</h3>
+        <p class="role">Payload Subsection Lead · 6-member subsection · Aug 2026 to present · In design</p>
+      </header>
+      <div class="proj-grid">
+        <div class="proj-vis">
+          <figure class="view">
+            <img src="images/payload-bottom-deploy.gif" width="720" height="812" decoding="async" alt="CAD animation of a servo crank and link driving a carriage down two guide rods, pushing straight pitot probes out of the bottom of the payload frame">
+            <figcaption class="meta">Current revision · CAD only · Onshape</figcaption>
+          </figure>
+          <dl class="figs">
+            <div><dt>Servos driving every probe</dt><dd><span class="dim"><b>1</b><i>design</i></span></dd></div>
+            <div><dt>Payload form factor</dt><dd><span class="dim"><b>4U</b><i>CubeSat</i></span></dd></div>
+          </dl>
+        </div>
+        <div class="story">
+          <p class="lead">One servo turns a crank that drives a carriage, pushing straight pitot probes out of the bottom of a CubeSat-format payload.</p>
+          <div class="prose">
+            <p>The team's payload for the 2027 rocket is a weather station in a 4U CubeSat format. My part is the unit that deploys the pitot probes. During descent, one servo turns a crank that drives a carriage down two guide rods and pushes straight probes out through the bottom of the payload.</p>
+            <p>The probes were first meant to measure wind speed from the sides. We decided that reading couldn't be accurate, so the probes now measure descent speed, which gives the weather station more data against altitude.</p>
+            <p>My first mechanism pushed four probes out of the side walls, and each tube had to be bent to face down. The current revision points straight probes down, so there is no bend. Its CAD has three probes and the count is still open. I printed both designs in PLA+ and ran them on the servo. The servo mount isn't designed yet, and the revision hasn't been through team review. The project page shows both designs.</p>
+            <p>I'm using FEA to choose a material for the linkage. I'm checking it against hand calculations of the servo stall loads, starting with the link. No material is chosen yet.</p>
+          </div>
+          <div class="actions"><a class="btn sm" href="payload/">Full project page<svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a><a class="btn alt sm" href="https://github.com/adlerkiely-afk/PayloadProject">Repository<svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></div>
+        </div>
+      </div>
+      <dl class="kv spec">
+          <div><dt>My role</dt><dd>Lead, 6-member subsection</dd></div>
+          <div><dt>My part</dt><dd>Probe deployment mechanism</dd></div>
+          <div><dt>Trade study</dt><dd>Rack-and-pinion vs slider-crank</dd></div>
+          <div><dt>CAD</dt><dd>Onshape</dd></div>
+          <div><dt>Loads</dt><dd>Servo stall hand calculations</dd></div>
+          <div><dt>Material</dt><dd>Not chosen · FEA in progress</dd></div>
+          <div><dt>Flies</dt><dd>IREC, summer 2027</dd></div>
+          <div><dt>Status</dt><dd>PLA+ prototype printed · no flight data</dd></div>
+      </dl>
+      <p class="proj-foot meta">Onshape · Linkage design · Trade study · Servo actuation · 4U CubeSat format</p>
+    </article>
+
+    <article class="proj" id="speeduas">
+      <header class="proj-head">
+        <p class="meta">Independent project</p>
+        <h3>SpeedUAS quadcopter</h3>
+        <p class="role">Sole designer · Apr 2026 to present · CFD meshing, not flown</p>
+      </header>
+      <div class="proj-grid">
+        <div class="proj-vis">
+          <figure class="view">
+            <div class="sheet"><img class="wire" src="images/wiref.png" width="1385" height="865" alt="Wireframe CAD view of a quadcopter with a streamlined fuselage and four motor nacelles on airfoil arms"></div>
+            <figcaption class="meta">Airframe wireframe · SolidWorks</figcaption>
+          </figure>
+          <dl class="figs">
+            <div><dt>Top speed</dt><dd><span class="dim"><b>160 to 175 km/h</b><i>target</i></span></dd></div>
+            <div><dt>Thrust-equals-drag estimate</dt><dd><span class="dim"><b>~240 km/h</b><i>calculated</i></span></dd></div>
+          </dl>
+        </div>
+        <div class="story">
+          <p class="lead">A 5-inch, 6S quadcopter with a streamlined body-of-revolution fuselage and airfoil arms.</p>
+          <div class="prose">
+            <p>SpeedUAS is a 5-inch, 6S quadcopter with a Myring body-of-revolution fuselage, 62 mm in diameter. The battery sits forward and the flight electronics aft, which keeps the frontal area small. This is the first iteration. I'm using it to validate the airframe and to set a baseline for a second one.</p>
+            <p>The four arms are NACA 0024 sections with a 38 mm chord, integral with the airframe. Each carries a carbon-fibre spar and internal wire channels. I considered a thinner NACA 0018 and rejected it. It had slightly less drag, but far less bending stiffness and no room for the spar and wiring.</p>
+            <p>A thrust-equals-drag model predicts about 240 km/h against a target of 160 to 175 km/h. The model uses datasheet thrust and assumed drag coefficients, so the 240 is an estimate and I have no test data behind it.</p>
+          </div>
+          <div class="actions"><a class="btn sm" href="speeduas/">Full project page<svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a><a class="btn alt sm" href="https://github.com/adlerkiely-afk/SpeedUAS">Repository<svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></div>
+        </div>
+      </div>
+      <dl class="kv spec">
+          <div><dt>My role</dt><dd>Sole designer</dd></div>
+          <div><dt>Class</dt><dd>5-inch · 6S</dd></div>
+          <div><dt>Fuselage</dt><dd>Myring, 62 mm dia.</dd></div>
+          <div><dt>Arms</dt><dd>NACA 0024, 38 mm chord</dd></div>
+          <div><dt>Top speed</dt><dd>160 to 175 km/h <small>target</small></dd></div>
+          <div><dt>Speed estimate</dt><dd>~240 km/h <small>calculated</small></dd></div>
+          <div><dt>Battery pack</dt><dd>34.9 × 38.7 × 80.7 mm <small>measured</small></dd></div>
+          <div><dt>Built in</dt><dd>SolidWorks · Ansys Fluent</dd></div>
+          <div><dt>Prints</dt><dd>Fit-checked with calipers</dd></div>
+          <div><dt>Thrust stand</dt><dd>Designed, not yet run</dd></div>
+          <div><dt>Logger &amp; procedures</dt><dd>Written, not yet run</dd></div>
+          <div><dt>Status</dt><dd>CFD meshing · not flown</dd></div>
+      </dl>
+      <ul class="notes">
+        <li><div><span class="meta">Battery bay</span><h4>The battery didn't fit</h4></div><p>I modeled the pack from its datasheet with about 1 mm of clearance. The real pack measured 34.9 × 38.7 × 80.7 mm, so the fuselage grew and I resized the cage to the measured part.</p></li>
+        <li><div><span class="meta">Motor mount</span><h4>I misread a datasheet</h4></div><p>I drew the motor bolt pattern as a 16 mm square, but the "16" was the bolt circle. Measuring the motor fixed it and let the nacelles shrink to the motor.</p></li>
+        <li><div><span class="meta">Motor plate</span><h4>A bridge that printed badly</h4></div><p>The motor plate had a 29 mm unsupported bridge. I replaced it with a funnel-shaped cavity with screw pockets. Every part now prints without supports.</p></li>
+      </ul>
+      <p class="proj-foot meta">SolidWorks · Ansys Fluent · 3D printing · NACA 0024 arms · Calipers · Bambu Studio</p>
+    </article>
+  </section>
+
+  <section id="experience">
+    <div class="shead"><h2>Experience</h2><span class="meta">Most recent first</span></div>
+    <div class="entry">
+      <div>
+        <p class="meta">Aug 2026 to current</p>
+        <h3>Payload Subsection Lead</h3>
+        <p class="org">Kent State University Rocket Team · Kent, Ohio</p>
+      </div>
+      <ul class="pts">
+        <li>Direct the 6-member payload subsection through design, fabrication and integration for the team's 2027 L3 rocket, working from the senior payload lead's direction.</li>
+        <li>Developing a 4U CubeSat-format weather station payload that measures atmospheric data with pitot tubes and other sensors. My own unit is the servo-actuated pitot deployment mechanism.</li>
+        <li>Using FEA to choose a material for the linkage. One first-pass run so far agrees with my hand calculation. No material is chosen yet.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div>
+        <p class="meta">Jun 2026 to current</p>
+        <h3>Engineering Undergraduate Student</h3>
+        <p class="org">Equinox Engineering Ltd. · Canonsburg, Pennsylvania</p>
+      </div>
+      <ul class="pts">
+        <li>Reviewed finalized 2D and 3D engineering drawings to study the company's modeling methods, drafting standards and GD&amp;T conventions.</li>
+        <li>Saw how EPCM work runs on oil, gas and energy projects, including facility design and coordination between disciplines.</li>
+        <li>Taught myself Microsoft Power BI and built dashboards of engineering project metrics.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div>
+        <p class="meta">Apr 2026 to current</p>
+        <h3>Academic Tutor</h3>
+        <p class="org">Kent State University · Calculus I &amp; II, Physics I</p>
+      </div>
+      <ul class="pts"><li>Selected on the basis of a 4.0 GPA to tutor calculus and calculus-based physics. I work through problems with other students one step at a time.</li></ul>
+    </div>
+    <div class="entry">
+      <div>
+        <p class="meta">Jan 2026 to Aug 2026</p>
+        <h3>Aerostructure Member</h3>
+        <p class="org">Kent State University Rocket Team · Kent, Ohio</p>
+      </div>
+      <ul class="pts"><li>Fabricated G10 fiberglass composite fins for a 13-ft high-power rocket. Beveled the leading edges to reduce pressure drag and epoxy-bonded the fins to the body tube for launch and recovery loads.</li></ul>
+    </div>
+  </section>
+
+  <section id="affiliations">
+    <div class="shead"><h2>Affiliations</h2><span class="meta">Memberships</span></div>
+    <ul class="rows">
+      <li><span>AIAA Kent State Student Branch</span><span class="r"><span>Advocacy Officer</span><span class="meta">2026 to present</span></span></li>
+      <li><span>Tripoli Rocketry Association</span><span class="r"><span>Member</span></span></li>
+      <li><span>Lockheed Martin Ethics Case Competition Team, Kent State</span><span class="r"><span>Member</span><span class="meta">2026</span></span></li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <div class="shead"><h2>Education</h2><span class="meta">Kent State University</span></div>
+    <div class="entry">
+      <div>
+        <p class="meta">Aug 2025 to May 2029 (expected)</p>
+        <h3>B.S., Aerospace Engineering</h3>
+        <p class="org">Kent State University · Kent, Ohio</p>
+      </div>
+      <div class="prose">
+        <p>Coursework so far: Statics, Calculus I–III, Linear Algebra, Physics I–II (E&amp;M) and Engineering Computing in MATLAB.</p>
+        <dl class="kv">
+          <div><dt>Cumulative GPA</dt><dd>4.00 / 4.00</dd></div>
+          <div><dt>Honors</dt><dd>President's List</dd></div>
+          <div><dt>Scholarship</dt><dd>President's Achievement</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="shead"><h2>Skills</h2><span class="meta">Level noted where it is limited</span></div>
+    <dl class="rows skills">
+      <div><dt>CAD</dt><dd><ul><li>SolidWorks</li><li>Fusion 360</li><li>Onshape</li><li>Drawings &amp; GD&amp;T<small>reading</small></li></ul></dd></div>
+      <div><dt>Analysis &amp; code</dt><dd><ul><li>MATLAB</li><li>Java</li><li>Ansys Fluent CFD<small>working knowledge</small></li><li>FEA<small>working knowledge</small></li><li>Python<small>working knowledge</small></li></ul></dd></div>
+      <div><dt>Build</dt><dd><ul><li>3D printing</li><li>Composite fabrication</li><li>Mechanical assembly</li><li>Arduino</li></ul></dd></div>
+      <div><dt>Flight &amp; data</dt><dd><ul><li>Airfoil selection</li><li>Propulsion &amp; battery sizing</li><li>Sectional charts &amp; airspace</li><li>Power BI · Excel</li></ul></dd></div>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <div class="shead"><h2>Contact</h2><span class="meta">Open to summer 2027</span></div>
+    <div class="split contact">
+      <div>
+        <h3>Get in touch</h3>
+        <p>I'm looking for a summer 2027 internship in mechanical or aerospace engineering. Email is the fastest way to reach me, and I'm glad to walk through either project in detail.</p>
+        <form class="card cform" id="cform" action="mailto:adler.kiely@gmail.com" method="get">
+          <div class="row">
+            <div class="field"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" autocomplete="name"></div>
+            <div class="field"><label for="cf-subject">Subject</label><input id="cf-subject" name="subject" type="text" required></div>
+          </div>
+          <div class="field"><label for="cf-body">Message</label><textarea id="cf-body" name="body" rows="6" required></textarea></div>
+          <div class="cform-foot"><button class="btn" type="submit">Open email draft</button></div>
+        </form>
+      </div>
+      <div>
+        <dl class="kv lg">
+          <div><dt>Email</dt><dd><a href="mailto:adler.kiely@gmail.com">adler.kiely@gmail.com</a></dd></div>
+          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/adlerkiely">/in/adlerkiely</a></dd></div>
+          <div><dt>GitHub</dt><dd><a href="https://github.com/adlerkiely-afk">/adlerkiely-afk</a></dd></div>
+          <div><dt>Based in</dt><dd>Kent, Ohio<br>Cranberry Township, PA</dd></div>
+        </dl>
+        <div class="actions"><a class="btn alt" href="resume/">View resume</a></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer><div class="wrap meta"><span>Adler Kiely · Kent State University</span><span>Both projects in development</span></div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,nav=document.getElementById('nav'),menu=document.getElementById('menu');
+  document.getElementById('tog').addEventListener('click',function(){
+    var n=root.dataset.theme==='light'?'dark':'light';
+    root.dataset.theme=n;
+    try{localStorage.setItem('theme',n);}catch(e){}
+  });
+  function setMenu(open){nav.classList.toggle('open',open);menu.setAttribute('aria-expanded',open?'true':'false');}
+  menu.addEventListener('click',function(){setMenu(!nav.classList.contains('open'));});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false);});
+  addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
+  var cform=document.getElementById('cform');
+  cform.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=cform.elements.name.value.trim(),body=cform.elements.body.value.trim();
+    if(name)body+='\n\n'+name;
+    location.href='mailto:adler.kiely@gmail.com?subject='+encodeURIComponent(cform.elements.subject.value.trim())+'&body='+encodeURIComponent(body);
+  });
+  if(!('IntersectionObserver' in window))return;
+  var links=[].slice.call(nav.querySelectorAll('a[href^="#"]')),current=null;
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting)current=e.target.id;
+      else if(current===e.target.id)current=null;
+    });
+    links.forEach(function(a){
+      if(a.getAttribute('href')==='#'+current)a.setAttribute('aria-current','true');
+      else a.removeAttribute('aria-current');
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('main section[id]').forEach(function(s){spy.observe(s);});
+})();
+</script>
+</body>
+</html>

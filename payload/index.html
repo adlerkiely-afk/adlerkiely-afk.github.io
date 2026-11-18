@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027 IREC payload: pitot deployment mechanism · Adler Kiely</title>
+<meta name="description" content="A single servo drives a crank and carriage that pushes straight pitot probes out of the bottom of a CubeSat-format payload. PLA+ prototype printed; not flown yet.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2027 IREC payload: pitot deployment mechanism">
+<meta property="og:description" content="A single servo drives a crank and carriage that pushes straight pitot probes out of the bottom of a CubeSat-format payload. PLA+ prototype printed; not flown yet.">
+<meta property="og:image" content="https://adlerkiely-afk.github.io/images/payload-bottom-deploy.gif">
+<meta property="og:url" content="https://adlerkiely-afk.github.io/payload/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/project.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../">Adler Kiely</a>
+  <nav aria-label="Site"><a href="../#projects">Projects</a><a href="../resume/">Resume</a></nav>
+  <button class="tog" id="tog" type="button" aria-label="Switch between light and dark theme">
+    <svg class="ico sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    <svg class="ico moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+  </button>
+</header>
+
+<main>
+  <div class="hero">
+    <div>
+      <p class="kicker rise" style="--i:0">Kent State Rocket Team · 2027 IREC payload</p>
+      <h1 class="rise" style="--i:1">Pitot deployment mechanism</h1>
+      <p class="sub rise" style="--i:2">One servo moves all the probes through a crank, a link and a carriage on two guide rods</p>
+      <ul class="tags rise" style="--i:3"><li>Mechanism design</li><li>Onshape</li><li>Hand calculations</li><li>FEA</li><li>3D printing</li><li>Team lead</li></ul>
+      <div class="actions rise" style="--i:4">
+        <a class="btn primary" href="https://github.com/adlerkiely-afk/PayloadProject">Repository<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+        <a class="btn secondary" href="https://github.com/adlerkiely-afk/PayloadProject/blob/main/payload/docs/design-history.md">Design history<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      </div>
+    </div>
+    <figure class="plate rise" style="--i:5">
+      <div class="view cad"><img src="../images/payload-bottom-deploy.gif" width="720" height="812" fetchpriority="high" alt="CAD animation of a servo crank and link driving a carriage down two guide rods, pushing straight pitot probes out of the bottom of the payload frame"></div>
+      <figcaption><span>Current revision · Onshape CAD</span><a href="https://github.com/adlerkiely-afk/PayloadProject/tree/main/payload/mechanism/cad/bottom-deploy">CAD exports<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></figcaption>
+    </figure>
+  </div>
+
+  <dl class="block">
+    <div><dt>My role</dt><dd>Payload Subsection Lead; mechanism designer</dd></div>
+    <div><dt>Team</dt><dd>6-member subsection</dd></div>
+    <div><dt>Dates</dt><dd>Aug 2026 to present</dd></div>
+    <div><dt>Status</dt><dd>PLA+ prototype printed · not flown</dd></div>
+  </dl>
+
+  <section class="sec">
+    <h2>Specs</h2>
+    <div class="body">
+      <div class="figs">
+        <div class="fig">
+          <span class="dim"><b>1 servo</b><i>design</i></span>
+          <p>Drives every probe through a crank, a link and a carriage on two guide rods</p>
+        </div>
+        <div class="fig">
+          <span class="dim"><b>3 probes</b><i>current CAD</i></span>
+          <p>Straight stainless pitot probes; the final count is still open</p>
+        </div>
+        <div class="fig">
+          <span class="dim"><b>4U</b><i>form factor</i></span>
+          <p>CubeSat-format weather station payload</p>
+        </div>
+      </div>
+      <dl class="rows">
+        <div><dt>Spaceport America Cup, summer 2027. The flight payload has not been built or flown.</dt><dd>IREC 2027<small>target</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Context</h2>
+    <div class="body">
+      <p>The team's 2027 payload is a weather station in a 4U CubeSat form factor. It is released at 1,000 ft above ground and hangs below its tether during descent. My subsection is responsible for the mechanism that pushes the pitot probes out into the airflow after release and pulls them back in before landing.</p>
+      <p>The probes measure descent speed. The original goal was wind speed from each side. After a review with a Kent State faculty member, the team concluded that reading wouldn't be accurate enough, so the probes now face down into the airflow as the payload descends. Combined with pressure altitude, that gives the weather station data on an altitude basis.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Requirements</h2>
+    <div class="body">
+      <p>The atmospheric payload's requirements are section 2.4.2.6 of the team's 2026–27 requirements document, written by the senior design team. I worked with the senior payload lead on the functional decisions behind them. They were written when the pitot probes were meant to read wind. The probes now read descent speed, and wind speed and direction are roughly estimated from GPS instead.*</p>
+      <dl class="rows">
+        <div><dt>2.4.2.6.7 · Determine wind speed during descent</dt><dd>Kept*<small>rough estimate from GPS</small></dd></div>
+        <div><dt>2.4.2.6.8 · Determine wind direction during descent</dt><dd>Kept*<small>rough estimate from GPS</small></dd></div>
+        <div><dt>2.4.2.6.9 – .10 · Orientation and heading, to interpret wind measurements</dt><dd>To revisit*<small>written for wind</small></dd></div>
+        <div><dt>2.4.2.6.1 · Extendable pitot tube for accurate measurements</dt><dd>Kept*<small>probes extend from the base</small></dd></div>
+      </dl>
+      <p>Still in force for the current design:</p>
+      <ul class="pts">
+        <li>Start collecting data after deployment and keep going until touchdown (2.4.2.6.2 – .3).</li>
+        <li>Measure temperature, humidity and pressure during descent, and determine altitude (2.4.2.6.4 – .6, .11).</li>
+        <li>Timestamp every measurement and store it onboard for retrieval and analysis (2.4.2.6.12 – .14).</li>
+        <li>Switch from stowed to data collection on its own after deployment, with no commands from the ground (2.4.2.6.15 – .16).</li>
+      </ul>
+      <p class="note">* Working change. It's what the payload team is designing to now, but the official requirements document hasn't been updated yet.</p>
+      <p class="note">None of these are verified yet. The payload hasn't been built or flown.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>What I did</h2>
+    <div class="body">
+      <ul class="pts">
+        <li>I lead the 6-member payload subsection through design, fabrication and integration, working from the senior payload lead's direction.</li>
+        <li>I designed both revisions of the deployment mechanism in Onshape.</li>
+        <li>I worked out the loads by hand: how much force a stalled servo puts into each part at different points in its travel.</li>
+        <li>I set up the linkage FEA in Onshape and compared the first run with those hand calculations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Design process</h2>
+    <div class="body">
+      <ol class="tl">
+        <li class="step">
+          <p class="label">01 · Concept</p>
+          <h3>Wind speed from four directions</h3>
+          <p>Four pitot probes pointing out of the four sides of the payload, one per direction. This is the concept the team requirements were written for: 2.4.2.6.7 and 2.4.2.6.8 call for wind speed and wind direction during descent. Those requirements stayed; wind is now roughly estimated from GPS, and the probes moved to descent speed.</p>
+          <p><strong>Why it changed:</strong> the faculty review concluded the wind reading wouldn't be accurate enough. The goal became descent speed, which needs probes pointing down.</p>
+        </li>
+        <li class="step">
+          <p class="label">02 · First mechanism</p>
+          <h3>Four probes out of the sides</h3>
+          <figure class="plate">
+            <div class="view cad light"><img src="../images/payload.gif" width="800" height="503" loading="lazy" alt="CAD animation of the first design: a servo-driven linkage pushing four pitot probes out of the sides of a CubeSat-format payload frame"></div>
+            <figcaption><span>First design · Onshape CAD</span></figcaption>
+          </figure>
+          <figure class="plate">
+            <div class="view"><img src="../images/proto1-side-deploy.gif" width="400" height="392" loading="lazy" alt="Printed PLA+ prototype of the first design: a servo drives the linkage and sleds inside a printed frame"></div>
+            <figcaption><span>Printed prototype · PLA+ · servo-driven on the bench</span></figcaption>
+          </figure>
+          <p>One servo turns a central hex hub through 90 degrees. The hub drives four arms on two levels; each arm pushes a sled carrying one stainless probe out through the payload wall.</p>
+          <p><strong>Why it changed:</strong> to read descent speed, each probe tip had to be bent 90 degrees to face down. A hand-bend trial kinked the tube, and every bent tip also needed its own pocket in the frame and slot in the metal chassis.</p>
+        </li>
+        <li class="step now">
+          <p class="label">03 · Current revision · Nov 2026</p>
+          <h3>Straight probes out of the bottom</h3>
+          <p>One servo turns a crank. A link drives a carriage down two steel guide rods, and the carriage pushes straight probes through a guide in the base plate, so they come out already pointing into the airflow. A bridge across the top holds the guide rods' free ends.</p>
+          <p>With straight probes there is no tube bend, no wall pockets or chassis slots, and nothing needed to hold each tip's direction. The current model carries three probes, and the count is still open. I printed a PLA+ prototype and ran it on the servo. The servo mount isn't designed yet, so the servo is held by hand in the video. It hasn't been through team review.</p>
+          <figure class="plate">
+            <div class="view"><img src="../images/proto2-bottom-deploy.gif" width="380" height="540" loading="lazy" alt="Printed PLA+ prototype of the bottom-deploy mechanism: the servo turns the crank and the carriage pushes three probes out through the base"></div>
+            <figcaption><span>Printed prototype · PLA+ · servo-driven, held by hand (no servo mount yet)</span></figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Analysis</h2>
+    <div class="body">
+      <p>The largest load the mechanism can put on itself comes from the servo stalling against a jam, such as a stuck probe. I'm working out the force on each part from a moment balance on the crank: the servo torque equals the link force times its lever arm about the servo axis.</p>
+      <p>That lever arm changes with crank angle. Near the stowed end the link points almost through the servo axis, so the force on the link, crank and pins is much higher there than mid-stroke.</p>
+      <p>I'm checking the FEA against hand calculations, starting with the link, before using it to choose materials. The first run points to the pin holes as the weak spot.</p>
+      <p class="note">FEA is in progress. No results are final, no material is chosen, and nothing has been load tested.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Design notes</h2>
+    <div class="body">
+      <ul class="pts">
+        <li>Once the goal became descent speed, pointing the whole mechanism down removed the tube bend, which was the hardest part of the first design.</li>
+        <li>I compared the first FEA run with a hand calculation somewhere simple (the link body) before reading the stress somewhere complicated (the pin holes).</li>
+        <li>I first took mid-stroke as the worst jam. The geometry near the stowed end multiplies the servo's force about ten times.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Status</h2>
+    <div class="body">
+      <table class="status">
+        <tr><th scope="row">CAD (Onshape)</th><td>Bottom-deploy revision modeled</td></tr>
+        <tr><th scope="row">Team review</th><td>Not yet</td></tr>
+        <tr><th scope="row">Load hand calculations</th><td>Done for stall jam cases</td></tr>
+        <tr><th scope="row">Linkage FEA</th><td>In progress, first run done</td></tr>
+        <tr><th scope="row">Material choice</th><td>Not decided</td></tr>
+        <tr><th scope="row">Prototypes</th><td>Both designs printed in PLA+, servo-driven on the bench</td></tr>
+        <tr><th scope="row">Servo mount</th><td>Not designed yet</td></tr>
+        <tr><th scope="row">Flight hardware and load testing</th><td>Not started</td></tr>
+        <tr><th scope="row">Launch</th><td>IREC, summer 2027</td></tr>
+        <tr><th scope="row">Flight data</th><td>None, not flown</td></tr>
+      </table>
+      <p class="state">PLA+ prototypes printed and servo-driven on the bench. FEA in progress with no final results. Flies at IREC in summer 2027. No flight data.</p>
+      <div class="actions">
+        <a class="btn primary" href="../resume/">View resume</a>
+        <a class="btn secondary" href="../#projects"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Back to the full portfolio</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+</div>
+<script>
+  document.getElementById('tog').addEventListener('click',function(){var r=document.documentElement,n=r.dataset.theme==='light'?'dark':'light';r.dataset.theme=n;try{localStorage.setItem('theme',n);}catch(e){}});
+</script>
+</body>
+</html>

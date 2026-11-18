@@ -1,0 +1,64 @@
+/* Shared design tokens. Direction: engineering drawings and the test bench.
+   Ink neutral ramp, one cobalt accent, IBM Plex Sans + IBM Plex Mono.
+   Adapted from unslop by Damir Sokolovsky (@heydamir), CC BY 4.0. */
+
+:root {
+  /* black and white: near-black paper, off-white ink, no color accent */
+  --bg-deep: #0a0c0e;
+  --bg: #0f1214;
+  --card: #15191c;
+  --raised: #1c2125;
+  --text: #eaeae5;
+  --text-2: rgba(234, 234, 229, 0.72);
+  --text-3: rgba(234, 234, 229, 0.52);
+  --line: rgba(234, 234, 229, 0.12);
+  --line-2: rgba(234, 234, 229, 0.18);
+  --accent: #eaeae5;
+  --accent-ink: #0f1214;
+  --btn-bg: #eaeae5;
+  --btn-text: #0f1214;
+  --imgf: invert(1) hue-rotate(180deg) brightness(.92) contrast(1.05);
+  --blend: lighten;
+
+  --display: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --fast: 150ms;
+  --enter: 400ms;
+
+  --r-tag: 4px;
+  --r-ctl: 8px;
+  --r-card: 12px;
+  --r-panel: 16px;
+}
+
+:root[data-theme="light"] {
+  --bg-deep: #f1f1ee;
+  --bg: #fbfbf9;
+  --card: #ffffff;
+  --raised: #f1f1ee;
+  --text: #14171a;
+  --text-2: rgba(20, 23, 26, 0.70);
+  --text-3: rgba(20, 23, 26, 0.52);
+  --line: rgba(20, 23, 26, 0.10);
+  --line-2: rgba(20, 23, 26, 0.16);
+  --accent: #14171a;
+  --accent-ink: #ffffff;
+  --btn-bg: #14171a;
+  --btn-text: #ffffff;
+  --imgf: none;
+  --blend: multiply;
+}
+
+/* Signature: a figure dimensioned like a drawing, with a thin line and end ticks under it.
+   <span class="dim"><b>172 N</b><i>calculated</i></span> */
+.dim { display: inline-flex; flex-direction: column; gap: 4px; font-variant-numeric: tabular-nums; }
+.dim b { font: 500 28px/1 var(--mono); color: var(--text); letter-spacing: -0.01em; }
+.dim::after {
+  content: ""; height: 7px; margin-top: 2px;
+  border-left: 1px solid var(--accent); border-right: 1px solid var(--accent);
+  background: linear-gradient(var(--accent), var(--accent)) center / 100% 1px no-repeat;
+}
+.dim i { order: 3; font: 400 12px/16px var(--mono); font-style: normal; color: var(--text-3); }

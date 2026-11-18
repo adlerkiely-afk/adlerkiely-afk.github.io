@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpeedUAS: high-speed quadcopter · Adler Kiely</title>
+<meta name="description" content="A 5-inch, 6S quadcopter with a streamlined body-of-revolution fuselage. In development; not yet flown.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpeedUAS: high-speed quadcopter">
+<meta property="og:description" content="A 5-inch, 6S quadcopter with a streamlined body-of-revolution fuselage. In development; not yet flown.">
+<meta property="og:image" content="https://adlerkiely-afk.github.io/images/wiref.png">
+<meta property="og:url" content="https://adlerkiely-afk.github.io/speeduas/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/project.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../">Adler Kiely</a>
+  <nav aria-label="Site"><a href="../#projects">Projects</a><a href="../resume/">Resume</a></nav>
+  <button class="tog" id="tog" type="button" aria-label="Switch between light and dark theme">
+    <svg class="ico sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    <svg class="ico moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+  </button>
+</header>
+
+<main>
+  <div class="hero">
+    <div>
+      <p class="kicker rise" style="--i:0">Independent project · April 2026 to present</p>
+      <h1 class="rise" style="--i:1">SpeedUAS: <span class="nb">high-speed</span> quadcopter</h1>
+      <p class="sub rise" style="--i:2">A 5-inch, 6S quadcopter with a streamlined body-of-revolution fuselage</p>
+      <ul class="tags rise" style="--i:3"><li>Airframe design</li><li>SolidWorks</li><li>Ansys Fluent</li><li>3D printing</li><li>MATLAB</li><li>Arduino</li></ul>
+      <div class="actions rise" style="--i:4">
+        <a class="btn primary" href="https://github.com/adlerkiely-afk/SpeedUAS">Repository<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+        <a class="btn secondary" href="https://github.com/adlerkiely-afk/SpeedUAS/tree/setup/repo-foundations">Thrust stand code and procedures<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      </div>
+    </div>
+    <figure class="plate rise" style="--i:5">
+      <div class="view"><img class="blend" src="../images/wiref.png" width="1385" height="865" fetchpriority="high" alt="Wireframe CAD view of a quadcopter with a streamlined fuselage and four motor nacelles on airfoil arms"></div>
+      <figcaption><span>Airframe wireframe · SolidWorks · not built</span></figcaption>
+    </figure>
+  </div>
+
+  <dl class="block">
+    <div><dt>My role</dt><dd>Sole designer</dd></div>
+    <div><dt>Team</dt><dd>Just me</dd></div>
+    <div><dt>Dates</dt><dd>Apr 2026 to present</dd></div>
+    <div><dt>Status</dt><dd>In development · not built or flown</dd></div>
+  </dl>
+
+  <section class="sec">
+    <h2>Numbers</h2>
+    <div class="body">
+      <div class="figs">
+        <div class="fig">
+          <span class="dim"><b>160 to 175 km/h</b><i>target</i></span>
+          <p>Top speed for this first airframe</p>
+        </div>
+        <div class="fig">
+          <span class="dim"><b>~240 km/h</b><i>calculated</i></span>
+          <p>From a thrust-equals-drag model using datasheet thrust and assumed drag coefficients</p>
+        </div>
+        <div class="fig">
+          <span class="dim"><b>80.7 mm</b><i>measured</i></span>
+          <p>Battery length. The whole pack is 34.9 × 38.7 × 80.7 mm by caliper, larger than I modeled from the datasheet.</p>
+        </div>
+      </div>
+      <dl class="rows">
+        <div><dt>Fuselage diameter. The fuselage is a Myring body of revolution.</dt><dd>62 mm<small>design</small></dd></div>
+        <div><dt>Chord on the four NACA 0024 arms, which carry a carbon-fibre spar and internal wire channels</dt><dd>38 mm<small>design</small></dd></div>
+      </dl>
+      <p class="note">The 240 km/h figure is an estimate. There is no CFD result, no thrust data and no flight data yet.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Context</h2>
+    <div class="body">
+      <p>SpeedUAS is a 5-inch, 6S quadcopter built around a streamlined fuselage. The fuselage is a Myring body of revolution, 62 mm in diameter. The battery sits forward and the flight electronics aft, which keeps the frontal area small.</p>
+      <p>Four integral NACA 0024 arms carry the motors, with a carbon-fibre spar and internal wire channels. This first iteration is meant to validate the airframe and set a baseline for a second one.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>What I did</h2>
+    <div class="body">
+      <ul class="pts">
+        <li>I'm designing the airframe in SolidWorks and sizing the electric propulsion package: motor, ESC, propeller and battery.</li>
+        <li>I print fit-check parts and correct the model from caliper measurements, one revision at a time.</li>
+        <li>I'm setting up CFD in Ansys Fluent on the airframe geometry to estimate drag before I commit to a build configuration.</li>
+        <li>I wrote the thrust stand logger (Arduino Nano with an HX711 load cell amplifier), MATLAB scripts to log and analyze runs, and test procedures for load cell calibration and static thrust.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Design process</h2>
+    <div class="body">
+      <ol class="tl">
+        <li class="step">
+          <p class="label">Arms</p>
+          <h3>NACA 0024 over NACA 0018</h3>
+          <p>I considered a thinner NACA 0018 section for the arms. It has slightly less drag, but far less bending stiffness and no room for the spar and wiring, so I stayed with the 0024 at a 38 mm chord.</p>
+        </li>
+        <li class="step">
+          <p class="label">Fit check · battery</p>
+          <h3>The battery didn't fit</h3>
+          <p>I modeled the pack from its datasheet with about 1 mm of clearance. The real pack measured 34.9 × 38.7 × 80.7 mm.</p>
+          <p><strong>What changed:</strong> the fuselage grew and the battery cage was resized to the measured part.</p>
+        </li>
+        <li class="step">
+          <p class="label">Fit check · motor mount</p>
+          <h3>I misread a datasheet</h3>
+          <p>I drew the motor bolt pattern as a 16 mm square. The "16" on the datasheet was the bolt circle.</p>
+          <p><strong>What changed:</strong> I measured the motor and redrew the pattern, which also let the nacelles shrink to the motor.</p>
+        </li>
+        <li class="step">
+          <p class="label">Fit check · motor plate</p>
+          <h3>A bridge that printed badly</h3>
+          <p>The motor plate had a 29 mm unsupported bridge that printed poorly.</p>
+          <p><strong>What changed:</strong> the bridge became a funnel-shaped cavity with screw pockets. Every part now prints without supports.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Analysis</h2>
+    <div class="body">
+      <p>A thrust-equals-drag model predicts a top speed of about 240 km/h against the 160 to 175 km/h target. It uses datasheet thrust and assumed drag coefficients, so I treat it as an estimate until I have my own drag and thrust numbers.</p>
+      <p>The CFD is meant to supply the drag number. The Fluent case is set up and being meshed. Nothing is solved yet.</p>
+      <p>The thrust stand is meant to supply the thrust number. The stand is designed, and the logger, MATLAB scripts and test procedures are written. None of it has been run, so there is no thrust data.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Requirements</h2>
+    <div class="body">
+      <p>I hold the design to my own requirements document, QUAD-REQ-001 Rev E. Each requirement says how it gets verified. Most of the performance ones can only be closed by flight test, so they're still open.</p>
+      <dl class="rows">
+        <div><dt>PR-01 · Top speed of at least 140 km/h in calm air · flight test</dt><dd>Open<small>not flown</small></dd></div>
+        <div><dt>PR-02 · Target top speed of 160 to 175 km/h in calm air · flight test</dt><dd>~240 km/h<small>predicted</small></dd></div>
+        <div><dt>PR-04 · Thrust-to-weight above 10:1 at full throttle · analysis and thrust stand</dt><dd>Open<small>parts not all weighed</small></dd></div>
+        <div><dt>PR-05 · At least 2 minutes of mixed flight, full-throttle bursts of 30 s or less · flight test</dt><dd>Open<small>rewritten</small></dd></div>
+        <div><dt>PR-08 · Stable hover for at least 3 minutes without pilot correction · flight test</dt><dd>Open<small>not flown</small></dd></div>
+        <div><dt>AF-03 · Less drag than a flat-plate center stack · CFD in Ansys Fluent</dt><dd>Open<small>meshing</small></dd></div>
+        <div><dt>AF-07 · Center of gravity within 5 mm of the geometric center · measurement</dt><dd>Open<small>not built</small></dd></div>
+        <div><dt>AF-08 · Motor mount matches the measured motor · inspection</dt><dd>Met<small>measured</small></dd></div>
+        <div><dt>AF-11 · Battery bay fits the measured pack · fit-check print</dt><dd>Met<small>measured</small></dd></div>
+        <div><dt>AF-12 · Every part prints without supports · inspection</dt><dd>Met</dd></div>
+        <div><dt>DOC-04 · Test procedures written before any test is run · inspection</dt><dd>Met<small>TP-01 to TP-03</small></dd></div>
+      </dl>
+      <p class="note">PR-05 used to ask for 3 minutes at full throttle. At the datasheet current of about 55 A per motor, the 1300 mAh pack lasts roughly 20 seconds at full throttle, so I rewrote it as mixed flight with short full-throttle bursts.</p>
+      <h3>Selected parts</h3>
+      <dl class="rows">
+        <div><dt>Motors (×4)</dt><dd>AOS Supernova 2207 1980KV</dd></div>
+        <div><dt>Flight controller and ESC</dt><dd>T-Motor F7 + F55A Pro II stack</dd></div>
+        <div><dt>Props</dt><dd>HQ 5×4.5×3 V1S</dd></div>
+        <div><dt>Battery</dt><dd>GNB 6S 1300 mAh HV</dd></div>
+        <div><dt>Receiver and transmitter</dt><dd>RadioMaster RP4TD-M · Boxer ELRS</dd></div>
+        <div><dt>FPV camera and VTX</dt><dd>Caddx Ratel 2 · TBS Unify Pro32 Nano<small>VTX planned</small></dd></div>
+        <div><dt>GPS</dt><dd>HGLRC M100 Mini<small>to confirm</small></dd></div>
+        <div><dt>Arm spar</dt><dd>4 mm OD carbon-fibre tube</dd></div>
+        <div><dt>Filament</dt><dd>PAHT-CF flight parts · ASA/ABS nose · PLA fit checks</dd></div>
+      </dl>
+      <div class="actions">
+        <a class="btn secondary" href="https://github.com/adlerkiely-afk/SpeedUAS/blob/setup/repo-foundations/docs/requirements/QUAD-REQ-001_RevE.md">Full requirements, Rev E<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Status</h2>
+    <div class="body">
+      <table class="status">
+        <tr><th scope="row">Airframe CAD</th><td>In development</td></tr>
+        <tr><th scope="row">Fit-check prints</th><td>Done, measured with calipers</td></tr>
+        <tr><th scope="row">CFD</th><td>Set up, meshing, not solved</td></tr>
+        <tr><th scope="row">Thrust stand</th><td>Designed, not run, no data</td></tr>
+        <tr><th scope="row">Thrust stand logger and test procedures</th><td>Written, not run yet</td></tr>
+        <tr><th scope="row">Aircraft</th><td>Not built, not flown</td></tr>
+      </table>
+      <p class="state">In development. Fit-check prints done. CFD is meshing and not yet solved. The aircraft is not assembled or flown.</p>
+      <div class="actions">
+        <a class="btn primary" href="../resume/">View resume</a>
+        <a class="btn secondary" href="../#projects"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Back to the full portfolio</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+</div>
+<script>
+  document.getElementById('tog').addEventListener('click',function(){var r=document.documentElement,n=r.dataset.theme==='light'?'dark':'light';r.dataset.theme=n;try{localStorage.setItem('theme',n);}catch(e){}});
+</script>
+</body>
+</html>
